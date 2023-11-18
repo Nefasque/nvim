@@ -1,0 +1,10 @@
+
+let noma = [
+  "hola", 
+  "pedro"
+]
+
+
+
+
+

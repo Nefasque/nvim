@@ -1,4 +1,4 @@
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 local opt = vim.o
 
@@ -7,7 +7,7 @@ opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 1
 
-opt.laststatus = 3 -- global statusline
+opt.laststatus = 3
 opt.showmode = false
 
 opt.clipboard = "unnamedplus"
@@ -38,9 +38,9 @@ opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
 
-opt.backup = false 
-opt.swapfile = false 
-opt.errorbells = false 
+opt.backup = false
+opt.swapfile = false
+opt.errorbells = false
 
 opt.syntax = "on"
 
