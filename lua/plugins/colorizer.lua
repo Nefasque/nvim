@@ -23,6 +23,6 @@ return {
         sass = { enable = false, parsers = { "css" },},
         virtualtext = "■",
         always_update = false
-      },
+    },
   }
 }
