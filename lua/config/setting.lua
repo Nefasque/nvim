@@ -5,7 +5,7 @@ local opt = vim.o
 -- number 
 opt.number = true
 opt.relativenumber = true
-opt.numberwidth = true
+opt.numberwidth = 1
 
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
