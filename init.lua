@@ -1,5 +1,6 @@
 require("config")
 
+-- telescope 
 vim.api.nvim_create_user_command("Alpha", function()
   local picker = require("telescope.pickers")
   local finders = require("telescope.finders")

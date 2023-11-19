@@ -1,6 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  event = 'VeryLazy',
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
@@ -23,6 +22,7 @@ return {
     require('telescope').setup(opts)
     require('telescope').load_extension('fzf')
   end,
+  cmd = "Telescope",
   keys = {
     {
       "<leader>pp",

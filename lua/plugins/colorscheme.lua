@@ -7,6 +7,7 @@ return {
     vim.cmd([[colorscheme monokai]])
 
     require('monokai').setup({
+        italics = false,
         palette = {
           name = 'monokai',
           base1 = '#272a30',
@@ -31,7 +32,8 @@ return {
           diff_add = '#3d5213',
           diff_remove = '#4a0f23',
           diff_change = '#27406b',
-          diff_text = '#23324d',        },
+          diff_text = '#23324d',
+      },
       })
   end
 }

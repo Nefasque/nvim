@@ -4,7 +4,3 @@ let noma = [
   "pedro"
 ]
 
-
-
-
-
