@@ -6,6 +6,7 @@ return {
   },
   event = "VeryLazy",
   main = "nvim-treesitter.configs",
+
   opts = {
     ensure_installed = {
       "bash",
@@ -21,6 +22,7 @@ return {
       "regex",
       "vim",
       "yaml",
+      "python",
     },
     highlight = {
       enable = true,

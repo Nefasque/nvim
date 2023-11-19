@@ -2,6 +2,7 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+local lspkind = require('lspkind')
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -59,7 +60,19 @@ function M.setup()
       { name = "path" },
       { name = "luasnip" },
       { name = "buffer" },
+      { name = "codeium" }
     },
+
+    formatting = {
+      format = lspkind.cmp_format({
+        mode = 'symbol', -- show only symbol annotations
+        maxwidth = 50,
+        ellipsis_char = '...',
+        symbol_map = { Codeium = "", }
+    })
+  }
+
+
   })
 
   cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
@@ -119,6 +132,17 @@ function M.setup()
       return not disabled[cmd] or cmp.close()
     end
   })
+
+ -- cmp.formatting = {
+ --     format = require("lspkind").cmp_format({
+ --         mode = "symbol",
+ --         maxwidth = 50,
+ --         ellipsis_char = '...',
+ --         symbol_map = { Codeium = "", }
+ --     })
+ -- }
+
+
 end
 
 return M

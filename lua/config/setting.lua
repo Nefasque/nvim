@@ -55,20 +55,5 @@ opt.updatetime = 250
 -- leader
 
 -- fols
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.cmd([[ autocmd BufReadPost,FileReadPost * normal zR ]])
-
-local function CustomFoldText()
-  local foldstart = vim.fn.foldclosed(vim.fn.line('.'))
-  local foldend = vim.fn.foldclosedend(vim.fn.line('.'))
-  local indentation = vim.fn.indent(foldstart - 1)
-  local foldSize = 1 + foldend - foldstart
-  local foldSizeStr = " " .. foldSize .. " lines "
-  local foldLevelStr = string.rep("+--", vim.wo.foldlevel)
-  local expansionString = string.rep(" ", indentation)
-
-  return expansionString .. foldLevelStr .. foldSizeStr
-end
-
-vim.foldtext=CustomFoldText()
+--opt.foldmethod = "expr"
+--opt.foldexpr = "nvim_treesitter#foldexpr()"

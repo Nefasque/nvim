@@ -5,8 +5,8 @@ return {
   opts = {
     ui = {
       icons = {
-        package_pending = " ",
-        package_installed = "󰄳 ",
+        package_pending = "  ",
+        package_installed = " 󰄳 ",
         package_uninstalled = " 󰚌 ",
       },
 
@@ -21,7 +21,6 @@ return {
         cancel_installation = "<C-c>",
       },
     },
-
     max_concurrent_installers = 10,
   }
  }
