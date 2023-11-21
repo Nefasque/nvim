@@ -13,7 +13,7 @@ return {
         fuzzy = true,                   -- false will only do exact matching
         override_generic_sorter = true, -- override the generic sorter
         override_file_sorter = true,    -- override the file sorter
-        case_mode = "ignore_case",       -- or "ignore_case" or "respect_case"
+        case_mode = "ignore_case",      -- or "ignore_case" or "respect_case"
         -- the default case_mode is "smart_case"
       },
     }
@@ -98,6 +98,13 @@ return {
         require("telescope").extensions.file_browser.file_browser({ path = "%:h:p", select_buffer = true })
       end,
       desc = "Telescope file browser"
+    },
+    {
+      "<leader>th",
+      function()
+        require("telescope.builtin").colorscheme({ enable_preview = true })
+      end,
+      desc = "explore theme colorschemes"
     }
   },
 }

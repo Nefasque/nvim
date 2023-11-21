@@ -8,6 +8,7 @@ return {
       "markdown",
     },
 
-    vim.cmd.highlight("default link IndentLine color12")
-  }
+    --vim.cmd.highlight("default link IndentLine Comment")
+    vim.cmd.highlight("default link IndentLine Red")
+  },
 }

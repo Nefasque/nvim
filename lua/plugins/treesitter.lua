@@ -1,12 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
+  build = ":TSUpdate",
   event = "VeryLazy",
   main = "nvim-treesitter.configs",
-
   opts = {
     ensure_installed = {
       "bash",
@@ -26,7 +25,7 @@ return {
     },
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = { "org" },
+      -- additional_vim_regex_highlighting = { "org" },
     },
     indent = {
       enable = true,

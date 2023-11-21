@@ -69,9 +69,21 @@ function M.setup()
         maxwidth = 50,
         ellipsis_char = '...',
         symbol_map = { Codeium = "", }
-    })
-  }
+      })
+    },
 
+    sorting = {
+      comparators = {
+        cmp.config.compare.offset,
+        cmp.config.compare.exact,
+        cmp.config.compare.score,
+        require "cmp-under-comparator".under,
+        cmp.config.compare.kind,
+        cmp.config.compare.sort_text,
+        cmp.config.compare.length,
+        cmp.config.compare.order,
+      },
+    },
 
   })
 
@@ -133,16 +145,14 @@ function M.setup()
     end
   })
 
- -- cmp.formatting = {
- --     format = require("lspkind").cmp_format({
- --         mode = "symbol",
- --         maxwidth = 50,
- --         ellipsis_char = '...',
- --         symbol_map = { Codeium = "", }
- --     })
- -- }
-
-
+  -- cmp.formatting = {
+  --     format = require("lspkind").cmp_format({
+  --         mode = "symbol",
+  --         maxwidth = 50,
+  --         ellipsis_char = '...',
+  --         symbol_map = { Codeium = "", }
+  --     })
+  -- }
 end
 
 return M
