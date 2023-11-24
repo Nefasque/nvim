@@ -13,21 +13,23 @@ return {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
 
-    -- auto cerrado de pares 
+    -- auto cerrado de pares
     "windwp/nvim-autopairs",
-    { -- AI condeium 
-      "Exafunction/codeium.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
-      config = function()
-          require("codeium").setup({
-          })
-      end
-    },
-    -- icons 
+
+    -- icons
     "onsails/lspkind.nvim",
+    {
+      "Exafunction/codeium.nvim",
+      event = "VeryLazy",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+      },
+      config = function()
+        require("codeium").setup({})
+      end
+    }
   },
   event = "InsertEnter",
   main = "config.plugins.cmp",
   config = true,
 }
-

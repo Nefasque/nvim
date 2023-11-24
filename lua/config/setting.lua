@@ -48,6 +48,9 @@ opt.syntax = "on"
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
 
+-- termguicolors
+opt.termguicolors = true
+
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 -- opt.whichwrap:append "<>[]hl"

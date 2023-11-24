@@ -1,4 +1,4 @@
-local is_repo_git = require("utils.init").is_repo_git
+local is_repo_git = require("utils.functions").is_repo_git
 
 return {
   "lewis6991/gitsigns.nvim",

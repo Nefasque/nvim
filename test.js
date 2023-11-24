@@ -28,3 +28,11 @@ const productos = {
   precio: 150, 
 }
 
+// mostrar nombre y precio de los productos
+const mostrarCompras = (nombre,productos) => {
+  nombre.forEach(element => {
+    console.log(`hola ${element}, su precio es ${productos.precio}`)
+  })
+}
+
+mostrarCompras(nombre,productos)
