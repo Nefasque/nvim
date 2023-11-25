@@ -100,7 +100,11 @@ return {
     {
       "<leader>te",
       function()
-        require("telescope").extensions.file_browser.file_browser({ path = "%:h:p", select_buffer = true, hide_on_startup = true })
+        require("telescope").extensions.file_browser.file_browser({
+         -- prompt_title = "loo",
+         -- path = "%:h:p",
+         -- select_buffer = true,
+        })
       end,
       desc = "Telescope file browser"
     },

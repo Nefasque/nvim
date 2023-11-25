@@ -1,4 +1,5 @@
 require("utils.telescope.picker")
+require("utils.telescope.extention")
 
 local telescope = require("telescope")
 local action_layout = require("telescope.actions.layout")
@@ -9,11 +10,11 @@ telescope.setup({
   defaults = {
     prompt_position = "top",
     border = true,
-    --borderchars = { "-", "|", "-", "|", "", " ", "", "" },
+    --borderchars = { "-", "|", "-", "|", ".", ".", "`", "`" },
     sorting_strategy = "ascending",
-    selection_strategy = "follow",
+    selection_strategy = "reset",
     initial_mode = "insert",
-    layout_strategy = "vertical",
+    layout_strategy = "horizontal",
     layout_config = {
       horizontal = {
         prompt_position = "top",
@@ -28,6 +29,9 @@ telescope.setup({
       },
       width = 0.98,
       height = 0.98,
+    },
+    preview = {
+      hide_on_startup = true,
     },
     wrap_results = false,
     selection_caret = " ",
