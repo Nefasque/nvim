@@ -6,7 +6,8 @@ return {
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make'
-    } },
+    }
+  },
   opts = {
     extensions = {
       fzf = {
@@ -114,6 +115,13 @@ return {
         require("telescope.builtin").colorscheme({ enable_preview = true })
       end,
       desc = "explore theme colorschemes"
+    },
+    {
+      "<leader>tm",
+      function()
+        require("telescope.builtin").marks()
+      end,
+      desc = "explore marks"
     }
   },
 }

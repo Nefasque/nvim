@@ -1,6 +1,3 @@
-require("utils.telescope.picker")
-require("utils.telescope.extention")
-
 local telescope = require("telescope")
 local action_layout = require("telescope.actions.layout")
 local actions = require("telescope.actions")
@@ -10,37 +7,47 @@ telescope.setup({
   defaults = {
     prompt_position = "top",
     border = true,
-    --borderchars = { "-", "|", "-", "|", ".", ".", "`", "`" },
+    --borderchars = { "-", "|", "-", "|", "", " ", "", "" },
     sorting_strategy = "ascending",
-    selection_strategy = "reset",
+    selection_strategy = "follow",
+    scroll_strategy = "cycle",
+    layout_strategy = "vertical",
     initial_mode = "insert",
-    layout_strategy = "horizontal",
     layout_config = {
       horizontal = {
         prompt_position = "top",
-        preview_width = 0.65,
-        results_width = 0.2,
+        preview_width = 0.55,
+        results_width = 0.8,
       },
       vertical = {
         prompt_position = "top",
+
+        preview_width = 0.95,
         preview_height = 0.33,
-        results_height = 0.19,
+
+        results_width = 0.3,
+        results_height = 0.89,
+
         mirror = true,
       },
-      width = 0.98,
-      height = 0.98,
-    },
-    preview = {
-      hide_on_startup = true,
+      width = 0.99,
+      height = 0.99,
     },
     wrap_results = false,
     selection_caret = " ",
-    prompt_prefix = "   ",
+    prompt_prefix = "  ",
     entry_prefix = "  ",
     multi_icon = "  ",
+    path_display = "shorten",
     hl_result_eol = true,
     cache_picker = {
       num_pickers = 20,
+    },
+    --preview = false,
+    preview = {
+      check_mimn_type = "file",
+      treesitter = true,
+      ls_short = true,
     },
     vimgrep_arguments = {
       "rg",
@@ -73,4 +80,15 @@ telescope.setup({
       },
     },
   },
+  builtin = {
+    find_files = {
+      preview = false,
+      border = false,
+    }
+  },
+  pickers = {
+    find_file = {
+      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+    }
+  }
 })
