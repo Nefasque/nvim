@@ -4,36 +4,35 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   event = { "BufEnter" },
-  config = function()
+  opts = {
     -- statusline_color = "#000000",
-    require("sttusline").setup {
-      statusline_color = "#",
+    statusline_color = "StatusLine",
 
-      -- | 1 | 2 | 3
-      -- recommended: 3
-      laststatus = 3,
-      disabled = {
-        filetypes = {
-          "NvimTree",
-          "lazy",
-        },
-        buftypes = {
-          "terminal",
-        },
+    -- | 1 | 2 | 3
+    -- recommended: 3
+    laststatus = 3,
+    disabled = {
+      filetypes = {
+        -- "NvimTree",
+        -- "lazy",
       },
-      components = {
-        "mode",
-        "git-branch",
-        "filename",
-        --"git-diff",
-        "%=",
-        "diagnostics",
-        "lsps-formatters",
-        --"copilot",
-        --"indent",
-        --"encoding",
-        "pos-cursor",
-      }
-    }
-  end
+      buftypes = {
+        -- "terminal",
+      },
+    },
+    components = {
+      "mode",
+      "git-branch",
+      "filename",
+      "git-diff",
+      "%=",
+      "pos-cursor",
+      --"diagnostics",
+      "lsps-formatters",
+      --"copilot",
+      --"indent",
+      --"encoding",
+      --"pos-cursor-progress",
+    },
+  }
 }

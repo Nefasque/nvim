@@ -1,5 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
   dependencies = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -21,15 +22,14 @@ return {
     {
       "Exafunction/codeium.nvim",
       event = "VeryLazy",
-      dependencies = {
+      --[[ dependencies = {
         "nvim-lua/plenary.nvim",
-      },
+      }, ]]
       config = function()
         require("codeium").setup({})
       end
     }
   },
-  event = "InsertEnter",
   main = "config.plugins.cmp",
   config = true,
 }
