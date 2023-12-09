@@ -67,3 +67,5 @@ vim.keymap.set('n', '<F7>', ':source %<cr>', { desc = "Reload config" })
 -- exit mode terminal
 vim.keymap.set('t', '<C-x>', '<C-\\><C-n>', { desc = "Exit terminal mode" })
 
+-- toggle spell
+vim.keymap.set('n', '<leader><leader>s', ':set spell!<cr>', { desc = "Toggle spell" })

@@ -122,6 +122,13 @@ return {
         require("telescope.builtin").marks()
       end,
       desc = "explore marks"
+    },
+    {
+      "<leader>ts",
+      function()
+        require("telescope.builtin").spell_suggest()
+      end,
+      desc = "spell suggest"
     }
   },
 }

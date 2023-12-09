@@ -1,7 +1,7 @@
 // listado de nombre a saludar 
 let nombre = [
   "jose", 
-  "pedro",
+        "pedro",
   "maria",
   "luis",
   "carlos",
@@ -41,5 +41,7 @@ class producto {
     this.precio = precio
   }
 }
+
+const harina = new Proyecto(productos)
 
 mostrarCompras(nombre,productos)

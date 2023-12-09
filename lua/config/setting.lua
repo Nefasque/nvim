@@ -3,11 +3,11 @@
 -----------------------------------------------------------
 --local map = vim.api.nvim_set_keymap  -- set global keymap
 local cmd = vim.cmd                    -- execute Vim commands
-local exec = vim.api.nvim_exec         -- execute Vimscript
-local fn = vim.fn                      -- call Vim functions
+--local exec = vim.api.nvim_exec         -- execute Vimscript
+--local fn = vim.fn                      -- call Vim functions
 local g = vim.g                        -- global variables
 local opt = vim.opt                    -- global/buffer/windows-scoped options
-local api = vim.api                    -- call Vim api
+--local api = vim.api                    -- call Vim api
 local ag = vim.api.nvim_create_augroup -- create autogroup
 local au = vim.api.nvim_create_autocmd -- create autocomand
 
@@ -22,6 +22,7 @@ opt.swapfile = false          -- don't use swapfile
 opt.backup = false
 opt.errorbells = false
 g.himalaya_mailbox_picker = 'native'
+opt.spelllang = "es"
 
 -----------------------------------------------------------
 -- Neovim UI
