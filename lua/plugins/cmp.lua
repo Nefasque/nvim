@@ -1,5 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
+
   event = "InsertEnter",
   dependencies = {
     "hrsh7th/cmp-buffer",
@@ -21,10 +22,9 @@ return {
     "onsails/lspkind.nvim",
     {
       "Exafunction/codeium.nvim",
-      event = "VeryLazy",
-      --[[ dependencies = {
+      dependencies = {
         "nvim-lua/plenary.nvim",
-      }, ]]
+      },
       config = function()
         require("codeium").setup({})
       end

@@ -1,4 +1,4 @@
-local get_Xresouce = require("utils.functions").get_xresources_color
+-- local get_Xresouce = require("utils.functions").get_xresources_color
 
 return {
   "sainnhe/sonokai",
@@ -12,7 +12,7 @@ return {
     vim.g.sonokai_disable_terminal_colors = 1
     vim.g.sonokai_better_performance = 0
     -- decomentar para colores del Xresources
-    vim.g.sonokai_colors_override = {
+    --[[ vim.g.sonokai_colors_override = {
      black       = { get_Xresouce('color0'), '232' },
      bg_dim      = { '#222327', '232' },
      bg0         = { '#2c2e34', '235' },
@@ -38,7 +38,8 @@ return {
      grey        = { get_Xresouce('color8'), '246' },
      grey_dim    = { get_Xresouce('color8'), '240' },
      none        = { 'NONE', 'NONE' }
-    }
+    } ]]
+
     vim.cmd([[colorscheme sonokai]])
   end
 }

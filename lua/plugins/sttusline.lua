@@ -7,14 +7,15 @@ return {
   opts = {
     -- statusline_color = "#000000",
     statusline_color = "StatusLine",
-
     -- | 1 | 2 | 3
     -- recommended: 3
     laststatus = 3,
     disabled = {
       filetypes = {
-        -- "NvimTree",
-        -- "lazy",
+        "NvimTree",
+        "lazy",
+        "mason",
+        "telescope"
       },
       buftypes = {
         -- "terminal",
