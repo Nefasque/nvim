@@ -9,6 +9,7 @@ M.is_repo_git = function()
   return result:match('true') ~= nil
 end
 
+-- comprueba si el archivo es una imagen  arg="path/to/file.png"
 M.is_image = function(filepath)
   local image_extensions = { 'png', 'jpg' }
   local split_path = vim.split(filepath:lower(), '.', { plain = true })
@@ -16,6 +17,7 @@ M.is_image = function(filepath)
   return vim.tbl_contains(image_extensions, extension)
 end
 
+-- comprueba si el archivo es Markdown   arg="path/to/file.png"
 M.is_Markdown = function(filepath)
   local image_extensions = { 'md', 'MD' }
   local split_path = vim.split(filepath:lower(), '.', { plain = true })
@@ -23,6 +25,7 @@ M.is_Markdown = function(filepath)
   return vim.tbl_contains(image_extensions, extension)
 end
 
+-- saca el color de xrdb
 M.get_xresources_color = function(c)
   local command = io.popen('xrdb -query | grep ' .. c .. ' -m 1 | cut -f 2')
   if command == nil then

@@ -31,7 +31,7 @@ const productos = {
 // mostrar nombre y precio de los productos
 const mostrarCompras = (nombre,productos) => {
   nombre.forEach(element => {
-    console.log(`hola ${element}, su precio es ${productos.precio}`)
+    console.log(`${element}, su precio es ${productos.precio}`)
   })
 }
 
