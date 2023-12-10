@@ -7,7 +7,6 @@ const saludar = (nombre) => {
 
 nombre.forEach((element) => {
   console.log(`hola ${element}, ¿como estás?`);
-  console.log("hola");
 });
 
 for (let index = 0; index < nombre.length; index++) {
@@ -33,7 +32,3 @@ class producto {
     this.precio = precio;
   }
 }
-
-const harina = new Proyecto(productos);
-
-mostrarCompras(nombre, productos);

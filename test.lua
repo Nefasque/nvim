@@ -1,9 +1,22 @@
--- archivo de prueba
--- de la configuración de la 
--- opción de neovim 
+-- test api of neovim
 
---activar el Spell es_ES
+--local expand = vim.fn.expand
 
-vim.opt.spell = true
--- vim.opt.spelllang = "es"
-vim.opt.spelllang = "en"
+-- vim.o -> get option
+-- exaplen
+--  print(vim.o.nu)
+--  print(vim.o.path)
+
+-- vim.go -> get global option
+-- vim.bo -> get buffer option
+-- vim.wo -> get window option
+-- vim.opt -> get option
+
+local frase1 = "hola"
+local frase2 = "mundo"
+
+print(frase1 .. " " .. frase2)
+
+frase1 = frase1 .. frase2
+
+print(frase1)
