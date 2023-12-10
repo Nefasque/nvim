@@ -11,9 +11,9 @@ function M.setup()
   vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
   vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
-  vim.keymap.set("n", "<space>f", function()
+  --[[ vim.keymap.set("n", "<space>f", function()
     vim.lsp.buf.format({ async = true })
-  end, opts)
+  end) ]]
 
   local on_attach = function(_, bufnr)
     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -39,9 +39,9 @@ function M.setup()
   lspconfig.tsserver.setup({})
   lspconfig.html.setup({
     format = {
-      indentInnerHtml = true
-    }
-
+      indentInnerHtml = true,
+      extraLiners = "",
+    },
   })
   lspconfig.lua_ls.setup({
     on_attach = on_attach,
