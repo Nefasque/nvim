@@ -2,16 +2,16 @@ local null_ls = require("null-ls")
 
 -- hello my fre
 
+local formatting = null_ls.builtins.formatting
+--local completion = null_ls.builtins.completion
+
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.completion.spell,
-
-    -- snippet
-    null_ls.builtins.completion.luasnip,
-
     -- formant
-    null_ls.builtins.formatting.prettier
+    formatting.stylua.with({ filetypes = { "lua" } }),
+
+    formatting.prettier.with({
+      filetypes = { "html", "markdown", "css" },
+    }),
   },
 })
-
