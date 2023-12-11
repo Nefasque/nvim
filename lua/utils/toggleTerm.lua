@@ -1,18 +1,11 @@
 local toggletemp = require("toggleterm")
 
 toggletemp.setup({
-	open_mapping = [[<c-\>]],
-	on_open = function()
-		print("Terminal open")
-	end,
-	bash = {
-		cmd = "bash",
-	},
 	direction = "float",
 	hide_numbers = false,
 	autochdir = true,
 	start_in_insert = true,
-	persist_size = true,
+
 	float_opts = {
 		border = "rounded",
 	},
@@ -52,5 +45,3 @@ vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
 vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
 vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
-
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")

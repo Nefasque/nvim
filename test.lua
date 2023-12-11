@@ -11,12 +11,12 @@
 -- vim.bo -> get buffer option
 -- vim.wo -> get window option
 -- vim.opt -> get option
+--
 
-local frase1 = "hola"
-local frase2 = "mundo"
+-- local math = require("math")
 
-print(frase1 .. " " .. frase2)
+local list = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }
 
-frase1 = frase1 .. frase2
+local index = math.random(1, 10)
 
-print(frase1)
+print(list[index])
