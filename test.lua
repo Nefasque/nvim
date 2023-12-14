@@ -11,5 +11,3 @@
 -- vim.bo -> get buffer option
 -- vim.wo -> get window option
 -- vim.opt -> get option
-
-print(vim.fn.expand("%"))
