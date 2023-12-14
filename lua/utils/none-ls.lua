@@ -19,18 +19,14 @@ end
 null_ls.setup({
 	sources = {
 		-- formant
+		formatting.shellharden,
 		formatting.stylua.with({ filetypes = { "lua" } }),
-
 		formatting.prettier.with({
 			filetypes = { "html", "markdown", "css", "js", "javascript" },
 		}),
 	},
 
 	on_attach = function(client, bufnr)
-		vim.keymap.set("n", "<space>f", function()
-			vim.lsp.buf.format({ async = true })
-		end)
-
 		if client.supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 			vim.api.nvim_create_autocmd("BufWritePre", {

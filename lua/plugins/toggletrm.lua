@@ -2,13 +2,6 @@ return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	config = true,
-	opts = {
-		open_mapping = [[<c-\>]],
-		insert_mappings = true,
-		term_mappings = false,
-		border = "curved",
-	},
-
 	keys = {
 		{
 			"<leader>c",

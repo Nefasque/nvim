@@ -12,11 +12,12 @@ vim.cmd(
 startify.section.header.val = require("utils.alpha.headers")
 
 startify.section.top_buttons.val = {
-	startify.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+	startify.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
 	startify.button("f", "  Seach File", ":Telescope find_files<CR>"),
 	startify.button("r", "  Recent File", ":Telescope oldfiles<CR>"),
-	startify.button("t", "  Terminal", ":ToggleTerm<CR>"),
-	startify.button("u", "  Plugins", ":Lazy<CR>"),
+	startify.button("t", "  Terminal", ":ToggleTerm<CR>"),
+	startify.button("u", "  Plugins", ":Lazy<CR>"),
+	startify.button("m", "  LSP", ":Mason<CR>"),
 	startify.button("s", "  Settings", ":e ~/.config/nvim/lua/config/setting.lua<CR>"),
 	startify.button("h", "󰞋  Help", ":Telescope help_tags<CR>"),
 	startify.button("a", "x  Cancel", ":Alpha<CR>"),

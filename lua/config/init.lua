@@ -1,10 +1,8 @@
-require "config.setting"
-require "config.lazy"
-require "config.keymaps"
+require("config.setting")
+require("config.lazy")
+require("config.keymaps")
 
-
-require "utils"
-
+require("utils")
 
 -- vim.api.nvim_exec ([[
 --     augroup markdownSpell
