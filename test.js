@@ -1,4 +1,4 @@
-// listado de nombre a saludar
+//plistado de nombre a saludar
 let nombre = ["jose", "pedro", "maria", "luis", "carlos", "mario"];
 
 const saludar = (nombre) => {
