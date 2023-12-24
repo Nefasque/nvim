@@ -80,10 +80,8 @@ else
 fi
 
 clear
-# ejecuta
 separadoresEncabezado "$cmd"
 eval "$cmd"
 separadores
-
-read -p "inter any key to exit"
+read -p "inter any key to exit" a
 exit
