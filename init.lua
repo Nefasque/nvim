@@ -1,6 +1,6 @@
 require("config")
 
--- elescope
+--  elescope
 -- vim.api.nvim_create_user_command("Alpha", function()
 --   ocal
 --   picker = require("telescope.pickers")

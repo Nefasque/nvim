@@ -1,4 +1,4 @@
-//plistado de nombre a saludar
+// listado de nombre a saludar
 let nombre = ["jose", "pedro", "maria", "luis", "carlos", "mario"];
 
 const saludar = (nombre) => {
@@ -32,3 +32,5 @@ class producto {
     this.precio = precio;
   }
 }
+
+CustomElementRegistry

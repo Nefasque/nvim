@@ -22,7 +22,7 @@ function M.setup()
 			["<C-d>"] = cmp.mapping.scroll_docs(-4),
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-Space>"] = cmp.mapping.complete(),
-			["<C-p>"] = cmp.mapping(function(fallback)
+			["<C-o>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					if cmp.visible_docs() then
 						cmp.close_docs()
@@ -39,7 +39,7 @@ function M.setup()
 				behavior = cmp.ConfirmBehavior.Insert,
 				select = true,
 			}),
-			["<Tab>"] = cmp.mapping(function(fallback)
+			["<C-n>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					if #cmp.get_entries() == 1 then
 						cmp.confirm({ select = true })
@@ -59,7 +59,7 @@ function M.setup()
 					fallback()
 				end
 			end, { "i", "s" }),
-			["<S-Tab>"] = cmp.mapping(function(fallback)
+			["<C-p>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_prev_item()
 				elseif luasnip.jumpable(-1) then

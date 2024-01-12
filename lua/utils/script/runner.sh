@@ -76,7 +76,7 @@ elif [[ $ext == "csproj" ]]; then
 elif [[ $ext == "csx" ]]; then
   cmd="dotnet run"
 else
-  echo "Extensión de archivo no soportada"
+  cmd="$FILE"
 fi
 
 clear

@@ -75,3 +75,9 @@ vim.keymap.set("n", "<leader>-", "<C-w>5-", { desc = "Equal window" })
 vim.keymap.set("n", "<leader>+", "<C-w>5+", { desc = "Equal window" })
 vim.keymap.set("n", "<leader><", "<C-w>5<", { desc = "Equal window" })
 vim.keymap.set("n", "<leader>>", "<C-w>5>", { desc = "Equal window" })
+
+vim.keymap.set("n", "s*", ":let @/='\\<'.expand('<cword>').'\\>'<CR>cgn")
+vim.keymap.set("v", "s*", '"sy:let @/=@s<CR>cgn')
+
+-- nnoremap <silent> s*
+-- xnoremap <silent> s*
