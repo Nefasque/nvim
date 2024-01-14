@@ -63,6 +63,10 @@ function M.setup()
 	end
 
 	neodev.setup()
+	lspconfig.pylsp.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
 	lspconfig.tsserver.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
