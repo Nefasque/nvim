@@ -34,7 +34,6 @@ if [ -h "$FILE" ]; then
   exit 1
 fi
 
-
 # obtener la extensión
 ext="${FILE##*.}"
 
@@ -83,5 +82,4 @@ clear
 separadoresEncabezado "$cmd"
 eval "$cmd"
 separadores
-read -p "inter any key to exit" a
 exit

@@ -13,6 +13,8 @@ for (let index = 0; index < nombre.length; index++) {
   console.log(`hola ${nombre[index]}, ¿como estás?`);
 }
 
+
+
 // producto a mostrar
 const productos = {
   nombre: "harina",
