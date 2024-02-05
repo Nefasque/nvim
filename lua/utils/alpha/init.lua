@@ -6,10 +6,21 @@ startify.config.opts = {
 	margin = 2,
 }
 
-vim.cmd(
-	[[autocmd User AlphaReady lua require("alpha.themes.startify").section.header.val = require("utils.alpha.headers")]]
-)
-startify.section.header.val = require("utils.alpha.headers")
+----- Mode header random. 
+-- vim.cmd(
+-- 	[[autocmd User AlphaReady lua require("alpha.themes.startify").section.header.val = require("utils.alpha.headers")]]
+-- )
+--startify.section.header.val = require("utils.alpha.headers")
+
+--- mode header Not random. 
+startify.section.header.val = {
+  [[      .-.             ..-._.;;;' /\           .-.                   .-]],
+  [[        ;  :  .;;;.`-'(_).;  _  / |   .;;;.`-.;;.   .;.   .-.;;;.`-'  ]],
+  [[      .;:  : ;;  (_)    .:--(  /  |  ;;  (_);;  `;   ;;   ;;;  (_)    ]],
+  [[     .;' \ : .;;; .-.  .:'   `/.__|_.`;;;. ;;    :  ;;    :.;;; .-.   ]],
+  [[ .:'.;    \:;;  .;  ;.-: .:' /    |  _   `;;  `. ; ;;     ;;  .;  ;   ]],
+  [[(__.'      ``;.___.'(_/ (__.'     `-(_.;;;`;.__.:._`;.__.:`;.___.'    ]],
+}
 
 startify.section.top_buttons.val = {
 	startify.button("n", "  New file", ":ene <BAR> startinsert <CR>"),

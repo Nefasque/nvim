@@ -80,25 +80,3 @@ opt.ruler = false
 cmd([[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]])
 
 opt.syntax = "on"
-
------------------------------------------------------------
--- Spell
------------------------------------------------------------
--- enable spanish spell on markdown only
-local markdown_spell = ag("markdownSpell", {})
-au("FileType", {
-	pattern = "markdown,html",
-	callback = function()
-		vim.opt.spelllang = "es"
-		vim.opt.spell = true
-	end,
-	group = markdown_spell,
-})
-au({ "BufRead", "BufNewFile" }, {
-	pattern = "*.md",
-	callback = function()
-		vim.opt.spelllang = "es"
-		vim.opt.spell = true
-	end,
-	group = markdown_spell,
-})
