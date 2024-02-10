@@ -1,11 +1,10 @@
 local ibl = require("ibl")
-
 ibl.setup({
 	debounce = 200,
 
 	indent = {
-		char = " ",
-		tab_char = " ",
+		char = "|",
+		tab_char = ":",
 		smart_indent_cap = true,
 	},
 
@@ -15,11 +14,11 @@ ibl.setup({
 
 	scope = {
 		enabled = true,
-		char = ":",
+		char = "|",
 		show_start = false,
 		show_end = false,
 		show_exact_scope = false,
-		highlight = "iblIndent",
+		highlight = "Comment",
 	},
 	exclude = {
 		filetypes = {
@@ -37,3 +36,10 @@ ibl.setup({
 		},
 	},
 })
+
+-- IndentBlanklineContextChar xxx links to IblScope
+
+-- vim.cmd([[
+--   highlight @ibl.scope.char.1 guifg=orange
+--   highlight @ibl.indent.char.1 guifg=orange
+-- ]])

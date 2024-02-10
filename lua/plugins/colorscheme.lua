@@ -22,6 +22,8 @@ return {
       highlight! link @lsp.type.class Purple
       highlight! link @keyword blue 
       highlight WinSeparator guibg=bg guifg=#555555
+      highlight! link Visual @comment.warning
+      highlight! link CursorLine TelescopeSelection
     ]])
 
 	end,

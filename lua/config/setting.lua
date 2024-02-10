@@ -8,8 +8,8 @@ local cmd = vim.cmd -- execute Vim commands
 local g = vim.g -- global variables
 local opt = vim.opt -- global/buffer/windows-scoped options
 --local api = vim.api                    -- call Vim api
-local ag = vim.api.nvim_create_augroup -- create autogroup
-local au = vim.api.nvim_create_autocmd -- create autocomand
+-- local ag = vim.api.nvim_create_augroup -- create autogroup
+-- local au = vim.api.nvim_create_autocmd -- create autocomand
 
 -----------------------------------------------------------
 -- General
@@ -22,6 +22,8 @@ opt.backup = false
 opt.errorbells = true
 g.himalaya_mailbox_picker = "native"
 opt.spelllang = "es"
+-- vim.o.hidden = true
+vim.opt.hidden = true
 
 -----------------------------------------------------------
 -- Neovim UI
