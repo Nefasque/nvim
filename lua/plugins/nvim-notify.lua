@@ -3,7 +3,7 @@
 return {
 	"rcarriga/nvim-notify",
 	dependencies = {
-		"nvim-telescope/telescope.nvim",
+		-- "nvim-telescope/telescope.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-lua/plenary.nvim",
 	},

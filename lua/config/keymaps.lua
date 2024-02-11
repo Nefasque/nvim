@@ -9,7 +9,7 @@ vim.keymap.set("i", "<C-b>", "<ESC>I", { desc = "move beginning" })
 vim.keymap.set("i", "<C-e>", "<ESC>A", { desc = "move end" })
 
 -- buffer actions
-vim.keymap.set("n", "<leader>q", ":bd!<cr>", { desc = "Close current buffer" })
+vim.keymap.set("n", "<leader>q", ":bd<cr>", { desc = "Close current buffer" })
 -- new buffer
 vim.keymap.set("n", "<C-n>", ":enew<cr>", { desc = "New buffer" })
 -- got a to next buffer

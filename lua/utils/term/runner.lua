@@ -1,7 +1,7 @@
 local custom_commands = {}
 local message = {
-	no_permiso_exection = 'Sorry, but this file does not have permissions of execution',
-	no_support = 'Sorry, but this file can not run',
+	no_permiso_exection = "Sorry, but this file does not have permissions of execution",
+	no_support = "Sorry, but this file can not run",
 }
 
 local make_cmd = function(file)
@@ -46,6 +46,11 @@ end
 
 local runner = function()
 	local file = vim.fn.expand("%:.")
+	if file == "" then
+		vim.notify("Not running because current file is not selected", vim.log.levels.WARN)
+		return
+	end
+
 	local cmd = vim.tbl_get(custom_commands, file)
 
 	if not cmd then
