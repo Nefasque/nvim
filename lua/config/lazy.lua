@@ -12,7 +12,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  ui = {
+    size = { width = 0.7, height = 0.7 },
+    border = 'single',
+    title = " Packeg manager Plugins ",
+    title_pos = "left",
+    pills = false,
+  },
 	spec = {
 		{ import = "plugins" },
 	},
-}, nil)
+}, {})

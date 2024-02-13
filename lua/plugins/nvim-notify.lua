@@ -14,6 +14,7 @@ return {
 		-- this for transparency
 		notify.setup({
 			background_colour = "#000000",
+      border = "single",
       max_height = function()
         return math.floor(vim.o.lines * 0.75)
       end,
@@ -22,7 +23,7 @@ return {
       end,
       stage = "static",
       render = "wrapped-compact",
-      top_down = true,
+      top_down = false,
       animate = false,
 		})
 		-- this overwrites the vim notify function

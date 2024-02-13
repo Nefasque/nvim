@@ -7,9 +7,13 @@ return {
 	},
 	config = function()
 		-- highlights config IlluminatedWordWrite
-		vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = "#3f3f3f" })
-		vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = "#3f3f3f" })
-		vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = "#3f3f3f" })
+    local get_Xresouce = require("utils.functions").get_xresources_color
+
+    vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = 'none', bg = get_Xresouce('gray3')})
+    vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = 'IlluminatedWordRead'})
+    vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = 'IlluminatedWordRead'})
+
+
 		require("illuminate").configure({
 			under_cursor = true,
 			max_file_lines = nil,

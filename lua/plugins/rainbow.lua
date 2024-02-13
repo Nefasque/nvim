@@ -11,23 +11,24 @@ return {
 			strategy = {
 				[""] = rainbow.strategy["global"],
 				vim = rainbow.strategy["local"],
-				-- html = rainbow.strategy["global"],
-				-- latex = function(bufnr)
-				-- 	-- Disabled for very large files, global strategy for large files,
-				-- 	-- local strategy otherwise
-				-- 	local line_count = vim.api.nvim_buf_line_count(bufnr)
-				-- 	if line_count > 10000 then
-				-- 		return nil
-				-- 	elseif line_count > 1000 then
-				-- 		return rainbow.strategy["global"]
-				-- 	end
-				-- 	return rainbow.strategy["local"]
-				-- end,
+				html = rainbow.strategy["global"],
+				latex = function(bufnr)
+					-- Disabled for very large files, global strategy for large files,
+					-- local strategy otherwise
+					local line_count = vim.api.nvim_buf_line_count(bufnr)
+					if line_count > 10000 then
+						return nil
+					elseif line_count > 1000 then
+						return rainbow.strategy["global"]
+					end
+					return rainbow.strategy["local"]
+				end,
 			},
 			query = {
 				[""] = "rainbow-delimiters",
-				lua = "rainbow-delimiters",
-        -- html = "rainbow-delimiters",
+				lua = "rainbow-blocks",
+				-- lua = "rainbow-blocks",
+        html = "rainbow-blocks",
 			},
 			priority = {
 				[""] = 110,

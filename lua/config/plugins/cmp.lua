@@ -79,11 +79,13 @@ function M.setup()
 		},
 
 		window = {
+      documentation = cmp.config.window.bordered(),
 			completion = {
 				winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 				col_offset = -3,
 				side_padding = 1,
 				scrollbar = false,
+        border = "single",
 			},
 		},
 
@@ -104,11 +106,11 @@ function M.setup()
 
 		sorting = {
 			comparators = {
+				require("cmp-under-comparator").under,
 				cmp.config.compare.offset,
 				cmp.config.compare.exact,
 				cmp.config.compare.score,
 				cmp.config.compare.kind,
-				require("cmp-under-comparator").under,
 				cmp.config.compare.sort_text,
 				cmp.config.compare.length,
 				cmp.config.compare.order,
