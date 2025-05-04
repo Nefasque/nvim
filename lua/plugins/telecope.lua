@@ -88,7 +88,7 @@ return {
 		{
 			"<leader>tf",
 			function()
-				require("telescope.builtin").find_files()
+				require("telescope.builtin").fd()
 			end,
 			desc = "Telescope Find Files",
 		},

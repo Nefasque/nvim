@@ -2,7 +2,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-local lspkind = require("lspkind")
+-- local lspkind = require("lspkind")
 
 local has_words_before = function()
 	unpack = unpack or table.unpack
@@ -95,14 +95,14 @@ function M.setup()
 			},
 		},
 
-		formatting = {
-			format = lspkind.cmp_format({
-				mode = "symbol", -- show only symbol annotations
-				maxwidth = 50,
-				ellipsis_char = "~",
-				symbol_map = { Codeium = "" },
-			}),
-		},
+		-- formatting = {
+		-- 	format = lspkind.cmp_format({
+		-- 		mode = "symbol", -- show only symbol annotations
+		-- 		maxwidth = 50,
+		-- 		ellipsis_char = "~",
+		-- 		symbol_map = { Codeium = "" },
+		-- 	}),
+		-- },
 
 		sorting = {
 			comparators = {

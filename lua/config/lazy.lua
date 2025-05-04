@@ -17,7 +17,7 @@ require("lazy").setup({
     border = 'single',
     title = " Packeg manager Plugins ",
     title_pos = "left",
-    pills = false,
+    pills = true,
   },
 	spec = {
 		{ import = "plugins" },

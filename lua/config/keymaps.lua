@@ -63,9 +63,6 @@ vim.keymap.set("n", "<F7>", ":source %<cr>", { desc = "Reload config" })
 -- toggle spell
 vim.keymap.set("n", "<leader><leader>s", ":set spell!<cr>", { desc = "Toggle spell" })
 
--- alpha
-vim.keymap.set("n", "<leader>a", ":Alpha<cr>", { desc = "Alpha" })
-
 -- redimencinar paneles
 vim.keymap.set("n", "<leader>=", "<C-w>=", { desc = "Equal window" })
 vim.keymap.set("n", "<leader>-", "<C-w>5-", { desc = "Equal window" })

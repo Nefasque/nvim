@@ -1,7 +1,6 @@
 require("config.setting")
 require("config.lazy")
 require("config.keymaps")
-
 require("utils")
 
 -- vim.api.nvim_exec ([[
