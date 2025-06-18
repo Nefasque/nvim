@@ -1,58 +1,94 @@
-# the config Nefasque
+# Nefasque Neovim
 
-![demo](demo_Nvim.jpg)
+![logo](./logo.jpg)
 
-<div class="warning">
-  <p><b>Nota</b> </p>
-  <p>
-    Esta es mi configuracion personal y NO se dara 
-    asistencias en caso de promeblas.
-  </p>
-</div>
+---
 
-## Plugins ocupado 
-- [LAZY](https://github.com/folke/lazy.nvim) *plugins mananger*
+## Fetures
+
+> Minimalist interface
+> fast user experience
+> Integrated mini-nvim
+> rapid script execution
+> Color Theme obtained from the Xresources Archive 
+
 ---
-- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) *autocomplente* 
-- - [codeium](https://github.com/Exafunction/codeium.nvim) *AI codeium* 
-- - [autopairs](https://github.com/windwp/nvim-autopairs) *autocomplente pairs*
-- - [lua-snip](https://github.com/saadparwaiz1/cmp_luasnip) *snippets* 
-- - - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)  *snippets community*
----
-- [Mason](https://github.com/williamboman/mason.nvim) *cliente lsp*
-- - [lspconfig](https://github.com/neovim/nvim-lspconfig) *config lsp*
-- - [lspkind.nvim](https://github.com/williamboman/mason.nvim) *icons classe* 
-- - [none-ls](https://github.com/nvimtools/none-ls.nvim) *formatter* 
-- - [neodev](https://github.com/folke/neodev.nvim) *config lua lsp*
----
-- [telescope](https://github.com/nvim-telescope/telescope-fzf-native.nvim) *finder*
-- - [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim) *explorer* 
-- - [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) *finder fuzzy* 
----
-- [vim-fugitive](https://github.com/tpope/vim-fugitive) *Git*
-- - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) *git signal*
----
-- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) *better highlight*
-- - [hlarg](https://github.com/m-demare/hlargs.nvim) *highlight arguments* 
-- - [sonokai](https://github.com/sainnhe/sonokai) *colorscheme*
-- - [vim-illuminate](https://github.com/RRethy/vim-illuminate) *illuminate word*
-- - [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) *highlight delimiters*
----
-- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) *icons*
-- [sttuline](https://github.com/sontungexpt/sttusline) *status bar* 
-- [indet-blackline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) *indet line*
-- [alpha-nvim](https://github.com/goolord/alpha-nvim) *dasboar*
-- [toggleterm](https://github.com/akinsho/toggleterm.nvim) *toogle terminal*
-- [Comment.nvim](https://github.com/numToStr/Comment.nvim) *tooglet comment*
-- [nvim-colorizer.lua](https://github.com/NvChad/nvim-colorizer.lua) *highlight color hexadecimal*
-- [oil-nvim](https://github.com/stevearc/oil.nvim) *edit directory and file as a buffers*
----
-<style>
-  .warning {
-    background-color: #f8f7aa;
-    border-color: #f5c6cb;
-    color: #721c24;
-    padding: 10px;
-    border-radius: 5px;
-  }
-</style>
+
+## Used Plugins
+
++ [Sonokai](https://github.com/sainnhe/sonokai) (Theme colorscheme)
++ [Lazy](https://github.com/folke/lazy.nvim) (Plugins manager)
++ [Mini-Nvim](https://github.com/echasnovski/mini.nvim) (Core)
++ [Blick](https://github.com/saghen/blink.compat) (Completion)
++ [Windsurf](https://github.com/Exafunction/windsurf.nvim) (AI Completion))
++ [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) (Snippets)
++ [hlargs.nvim](https://github.com/m-demare/hlargs.nvim) (Highlight arguments)
++ [mason.nvim](https://github.com/williamboman/mason.nvim) (LSP)
+    - [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) (LSP)
+    - [mason-lspconfig.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) (Third tools)
++ [Stay centered](https://github.com/arnamak/stay-centered.nvim) (Centering Cursor)
++ [Vimade](https://github.com/tadaa/vimade) (Focus Mode)
++ [Toggleterm](https://github.com/akinsho/toggleterm.nvim) (Term Manager)
++ [Donut](https://github.com/NStefan002/donut.nvim) (Donut)
++ [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (tree code)
++ [Conform](https://github.com/stevearc/conform.nvim) (formatters_by_ft)
++ [Markdown Preview](https://github.com/adalessa/markdown-preview.nvim) (Markdown Preview)
+
+--- 
+
+## Xresources Color
+> The colors are extracted from Xresources files <CR>
+> The variables used are
+
+```
+#define base00 #2C1C2C
+#define base01 #a6bDe8
+#define base02 #5872BC
+#define base03 #6cb4a3
+#define base04 #e38B88
+#define base05 #BD2C4C
+#define base06 #9575CD
+#define base07 #D2D7DE
+#define base08 #eaeaea
+#define baseg1 #332133
+#define baseg2 #3f2a3f
+#define baseg3 #4f314f
+#define baseg4 #7a517a
+
+*.gray1: baseg1
+*.gray2: baseg2
+*.gray3: baseg3
+*.gray4: baseg4
+
+*.color0:       base00
+*.color1:       base01
+*.color2:       base02
+*.color3:       base03
+*.color4:       base04
+*.color5:       base05
+*.color6:       base06
+*.color7:       base07
+*.color8:       baseg4
+*.color9:       base01
+*.color10:      base02
+*.color11:      base03
+*.color12:      base04
+*.color13:      base05
+*.color14:      base06
+*.color15:      base07
+*.color16:      base08
+*.color256:     base08
+*.color257:     baseg2
+*.color258:     color1
+
+*.colorRed: base05
+*.colorGreen: base03
+*.colorYellow: base04
+*.colorBlue: base02
+*.colorPurple: base06
+*.colorCyan: base01
+
+```
+
+
+

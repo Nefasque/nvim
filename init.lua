@@ -1,29 +1,35 @@
-require("config")
+require("settings")
+require("keymap")
 
--- elescope
-vim.api.nvim_create_user_command("TestT", function()
-	local picker = require("telescope.pickers")
-	local finders = require("telescope.finders")
-	local actions = require("telescope.actions")
-	local action_state = require("telescope.actions.state")
-	local conf = require("telescope.config").values
+-- instalinstall lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
+end
+vim.opt.rtp:prepend(lazypath)
 
-	picker
-		.new({}, {
-			prompt_title = "Alpha",
-			finder = finders.new_table({
-				results = vim.fn.readfile(vim.g.historial_run_save_path),
-			}),
-			sorter = conf.generic_sorter(),
-			previewer = false,
-			attach_mappings = function(_, map)
-				map("i", "<cr>", function(promt_bufnr)
-					actions.close(promt_bufnr)
-					local entry = action_state.get_selected_entry()
-					vim.notify(entry[1])
-				end)
-				return true
-			end,
-		})
-		:find()
-end, {})
+require("lazy").setup({
+	ui = {
+		size = { width = 0.7, height = 0.7 },
+		border = "single",
+		title = " Packeg manager Plugins ",
+		title_pos = "left",
+		pills = true,
+	},
+	spec = {
+		{ import = "plugins" },
+	},
+}, {})
+
+--- scritp
+require("runner")
