@@ -11,8 +11,6 @@ local opt = vim.opt -- global/buffer/windows-scoped options
 local ag = vim.api.nvim_create_augroup -- create autogroup
 local au = vim.api.nvim_create_autocmd -- create autocomand
 
-local hl = require("utils").hl
-
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
@@ -28,6 +26,7 @@ vim.opt.fileformats = { "unix", "mac", "dos" } -- Support multiple file formats
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true -- show line number
+opt.numberwidth = 3
 opt.relativenumber = true -- show line number
 opt.showmatch = true -- highlight matching parenthesis
 opt.colorcolumn = "80" -- line lenght marker at 80 columns
@@ -45,8 +44,10 @@ opt.scrolloff = 999
 vim.o.cursorline = true
 vim.o.number = true
 vim.o.termguicolors = true
+vim.o.signcolumn='auto'
 
-vim.opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l│%T" -- Satuscolumn separator
+-- opt.singncolumn="auto" │
+opt.statuscolumn="%T%@NumCb@%l%=%@SignCb@%s" -- Satuscolumn separator
 
 vim.cmd([[let &t_Cs = "\e[4:3m"]]) -- Undercurl
 vim.cmd([[let &t_Ce = "\e[4:0m"]]) -- Undercurl
@@ -55,8 +56,11 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]]) -- Undercurl
 -- Folding
 -----------------------------------------------------------
 vim.o.foldmethod = "expr"
-vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99
+vim.o.foldcolumn = '1'
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 opt.list = true
 opt.listchars = "tab:  ,space: ,nbsp:␣,trail:•,precedes:«,extends:»"
 
@@ -68,6 +72,7 @@ opt.history = 100 -- remember n lines in history
 opt.lazyredraw = true -- faster scrolling
 opt.synmaxcol = 1000 -- max column for syntax highlight
 opt.undofile = true
+
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
@@ -75,6 +80,11 @@ opt.expandtab = false -- use spaces instead of tabs
 opt.shiftwidth = 2 -- shift 4 spaces when tab
 opt.tabstop = 2 -- 1 tab == 4 spaces
 opt.smartindent = true -- autoindent new lines
+
+----------------------------------------------------------
+--- sessions
+----------------------------------------------------------
+vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "winpos", "help", "options", "terminal" }
 
 ----------------------------------------------------------
 -- diagnostic config
@@ -100,17 +110,6 @@ au("BufEnter", {
 })
 
 -----------------------------------------------------------
--- Highlight
------------------------------------------------------------
--- highlight yanked text
-au("TextYankPost", {
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 700 })
-	end,
-	group = ag("yank_highlight", {}),
-})
------------------------------------------------------------
 -- Spell
 -----------------------------------------------------------
 -- enable spanish spell on markdown only
@@ -131,20 +130,3 @@ au({ "BufRead", "BufNewFile" }, {
 	end,
 	group = markdown_spell,
 })
-
-
--- vim.api.nvim_create_autocmd({ 'WinEnter' }, {
---     buffer = window.buffer,
---     callback = function()
---       guicursor_prev = vim.go.guicursor
---       vim.go.guicursor = 'a:CodewindowCursor'
---     end,
---     group = augroup,
---   })
---   vim.api.nvim_create_autocmd({ 'WinLeave' }, {
---     buffer = window.buffer,
---     callback = function()
---       vim.go.guicursor = guicursor_prev
---     end,
---     group = augroup,
---   })

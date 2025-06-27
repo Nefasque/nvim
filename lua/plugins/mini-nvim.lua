@@ -8,6 +8,7 @@ return {
 
 		require("mini.pairs").setup()
 		require("mini.surround").setup()
+		-- require("mini.icons").setup()
 		-----
 		require("mini.cursorword").setup()
 		hl("MiniCursorword", { bg = gXr("gray2"), bold = false })
@@ -99,6 +100,8 @@ return {
 		require("mini.pick").setup({
 			window = { config = { border = "single" } },
 		})
+		vim.ui.select = MiniPick.ui_select
+
 		require("mini.extra").setup()
 		require("mini.git").setup()
 
@@ -117,6 +120,11 @@ return {
 		local format_summary = function(data)
 			local summary = vim.b[data.buf].minidiff_summary
 			local t = {}
+
+			if summary == nil then
+				 summary = { add = 0, change = 0, delete = 0 }
+			end
+
 			if summary.add > 0 then
 				table.insert(t, "%#MiniDiffSignAdd# " .. summary.add)
 			end
@@ -126,13 +134,15 @@ return {
 			if summary.delete > 0 then
 				table.insert(t, "%#MiniDiffSignDelete# " .. summary.delete)
 			end
-			table.insert(t, "%#Normal#")
+
+			table.insert(t, "%#Normal# ")
 			vim.b[data.buf].minidiff_summary_string = table.concat(t, " ")
 		end
+
 		local au_opts_diff = { pattern = "MiniDiffUpdated", callback = format_summary }
 		vim.api.nvim_create_autocmd("User", au_opts_diff)
-		----
 
+		----
 		local MiniStatusline = require("mini.statusline")
 		MiniStatusline.setup({
 			content = {
@@ -158,6 +168,12 @@ return {
 						{ hl = "stlhl_pos", strings = { stl.cursorPos() } },
 					})
 				end,
+				inactive = function ()
+					local stl = require("statusline")
+					return MiniStatusline.combine_groups({
+						{ hl = "MiniStatuslineInactive", strings = { stl.fileInfo() } },
+					})
+				end
 			},
 		})
 
@@ -175,14 +191,23 @@ return {
 			end,
 		})
 
+		-- mini session
+		require("mini.sessions").setup({
+			autoread = false,
+			autowrite = true,
+			directory = "~/.config/nvim/sessions",
+		})
+
 		-- buf removre
 		require("mini.bufremove").setup()
 		require("mini.splitjoin").setup()
 
 		local starter = require("mini.starter")
 		starter.setup({
-			items = { name = "-------------------------------------------------", action = "", section = "" },
-			header = '\
+			items = {
+				starter.sections.sessions(),
+			},
+			header = "\
 						   ,#>             <#.\
 					  ,K@>                 <@K.\
 				  ,WK7`  ▖ ▖  ▐▘           `VKW.\
@@ -192,7 +217,7 @@ return {
 				 VKKW.    ______________    ,WKKV\
 					`VKKWWWWWWWWWWWWWWWWWWWWWWKKV`\
 						 `VM.    ,@KKKKM.    ,@7\
-								`VKKKKK,,,,KKKKKV`',
+								`VKKKKK,,,,KKKKKV`",
 			footer = "    Simple, beauty and speed finally gathered",
 			content_hooks = {
 				starter.gen_hook.aligning("center", "center"),

@@ -7,11 +7,12 @@ return {
 		ncmode = "windows",
 		blocklist = {
 			my_blocklist = {
-				buf_opts = { filetype = { "minipick", "minifiles", "mason", "lazy", "help" } },
+				buf_opts = { filetype = { "minipick", "minifiles", "mason", "lazy", "help", "ministarter", "terminal" } },
 			},
 			default = {
 				highlights = {
 					"MiniStatuslineInactive",
+					"Terminal",
 					"CursorLine",
 					"ColorColumn",
 					"stlhl_mode",

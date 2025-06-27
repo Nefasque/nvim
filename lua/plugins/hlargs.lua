@@ -1,20 +1,18 @@
+local colorscheme = require("utils").get_colorscheme()
+
 return {
-	"m-demare/hlargs.nvim",
-	event = "VeryLazy",
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter",
-	},
+    'm-demare/hlargs.nvim',
+	dependencies = {'nvim-treesitter/nvim-treesitter'},
 	opts = {
-		hl_priority = 200,
 		use_colorpalette = true,
-		sequential_colorpalette = true,
+		hl_priority = 9999,
+		sequential_colopalette = true,
 		colorpalette = {
-			{ link = "colorYellow" },
-			{ link = "colorPurple" },
-			{ link = "colorOrange" },
-			{ link = "colorGreen" },
-			{ link = "colorBlue" },
-			{ link = "colorRed" },
-		},
-	},
+			{fg = colorscheme['colorRed']},
+			{fg = colorscheme['colorGreen']},
+			{fg = colorscheme['colorYellow']},
+			{fg = colorscheme['colorBlue']},
+			{fg = colorscheme['colorPurple']},
+		}
+	}
 }

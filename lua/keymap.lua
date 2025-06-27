@@ -16,9 +16,10 @@ keymap(
 )
 
 -- save and quit
-keymap("n", "<leader>w", ":w<cr>", "Save file")
-keymap("n", "<leader>q", ":q<cr>", "Quit file")
-keymap("n", "<leader>Q", ":q!<cr>", "Forced Quit file")
+keymap("n", "<leader>w", "<cmd>:w<cr>", "Save file")
+keymap("n", "q", "<cmd>lua MiniBufremove.delete()<cr>", "Close Buffer")
+keymap("n", "<leader>q", "<cmd>:q<cr>", "Close Buffer")
+keymap("n", "<leader>Q", "<cmd>:quitall!<cr>", "Forced Quit file")
 
 -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
 keymap({ "n", "x", "v" }, "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "up", { expr = true, silent = true })
@@ -28,8 +29,8 @@ keymap({ "n", "x", "v" }, "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "
 keymap("i", "<C-e>", "<ESC>I", "move beginning")
 keymap("i", "<C-a>", "<ESC>A", "move end")
 
-keymap("i", "<TAB>", "<C-t>", "tab -> ")
-keymap("i", "<S-TAB>", "<C-d>", "tab <- ")
+-- keymap("i", "<TAB>", "<C-t>", "tab -> ")
+-- keymap("i", "<S-TAB>", "<C-d>", "tab <- ")
 
 -- Visual mode manipulation
 keymap("v", ">", ">gv", "after tab in re-select the same")
@@ -76,8 +77,8 @@ keymap("n", "<A-8>", "<cmd>buffer 8<cr>", "Buffer 8")
 keymap("n", "<A-9>", "<cmd>buffer 9<cr>", "Buffer 9")
 keymap("n", "<A-p>", "<cmd>bn<cr>", "Previous Buffer")
 keymap("n", "<A-n>", "<cmd>bp<cr>", "Next Buffer")
-keymap("n", "<A-d>", "<cmd>lua MiniBufremove.delete()<cr>", "Close Buffer")
 keymap("n", "<A-l>", "<cmd>buffers<cr>", "list Buffer")
+
 
 --Marks
 -- set a mark with 'm {char}'
@@ -95,9 +96,8 @@ keymap("n", "<leader>lu", "<cmd>Lazy update<cr>", "Update")
 keymap("n", "<leader>lr", "<cmd>Lazy restore<cr>", "Restore")
 keymap("n", "<leader>ll", "<cmd>Lazy<cr>", "Lazy")
 
--- Mason 
+-- Mason
 keymap("n", "<leader>mm", "<cmd>Mason<cr>", "Mason")
-
 
 -- Panels
 keymap("n", "<leader>pe", "<C-w>=", "Make Splits Equal")
@@ -168,5 +168,11 @@ keymap("n", "ts", "<cmd>Pick spellsuggest<CR>", "Pick Spell Suggest")
 keymap("n", "te", "<cmd>lua MiniFiles.open()<CR>", "MiniFiles")
 
 -- vimade focus  toggle
-keymap("n", "<leader>F","<cmd>VimadeFocus<CR>", "VimadeFocus")
+keymap("n", "<leader>F", "<cmd>VimadeFocus<CR>", "VimadeFocus")
+
+-- sessiosn select 
+keymap("n", "<leader>ss", "<cmd>lua require('mini.sessions').select()<CR>", "MiniSessions")
+
+
+
 

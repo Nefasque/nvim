@@ -1,10 +1,9 @@
 -- ==================
 -- Statusline Modules
 -- ==================
-
 local hl = require("utils").hl
 hl("stlhl_mode", { link = "blockred" })
-hl("stlhl_path", { fg = node, bg = none })
+hl("stlhl_path", { fg = "NONE", bg = "NONE" })
 
 local M = {}
 
@@ -45,7 +44,7 @@ M.mode = function()
 	end
 end
 
-M.cursorPos = function(args)
+M.cursorPos = function()
 	local l = vim.fn.getcurpos()[2]
 	local c = vim.fn.getcurpos()[3]
 
@@ -70,27 +69,6 @@ M.cursorPos = function(args)
 	return l .. ":" .. c
 end
 
-M.scrollbar_instance = function()
-	local current_line = vim.fn.line(".")
-	local total_lines = vim.fn.line("$")
-	local chars = { "\\ ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" }
-
-	local index
-
-	if current_line == 1 then
-		index = 1
-	elseif current_line == total_lines then
-		index = #chars
-	else
-		local line_no_fraction = vim.fn.floor(current_line) / vim.fn.floor(total_lines)
-		index = vim.fn.float2nr(line_no_fraction * #chars)
-		if index == 0 then
-			index = 1
-		end
-	end
-	return chars[index]
-end
-
 M.fileInfo = function()
 	local filetype = vim.bo.filetype
 	local patch = vim.fn.expand("%:f")
@@ -99,6 +77,11 @@ M.fileInfo = function()
 	local icon, color = require("nvim-web-devicons").get_icon_color(name, ext)
 
 	if filetype == "ministarter" then
+		return " "
+	end
+
+	if vim.bo.buftype == "terminal" then
+		hl("stlhl_path", { fg = color })
 		return " "
 	end
 

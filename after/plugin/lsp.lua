@@ -50,6 +50,17 @@ vim.lsp.config("*", {
 	current_line = true,
 })
 
+vim.lsp.config("*",{
+	capabilities = {
+		textDocument = {
+			foldingRange = {
+			dynamicRegistration = false,
+			lineFoldingOnly = true
+			}
+		}
+	}
+})
+
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable('bashls')

@@ -59,8 +59,8 @@ return {
 		-- hl("CursorIM", { fg = coloscheme["color7"], bg = coloscheme["color0"] })
 
 		-- color main
-		hl("ColorBlue", { fg = coloscheme["colorBlue"] })
-		hl("ColorGreen", { fg = coloscheme["colorGreen"] })
+		hl("colorBlue", { fg = coloscheme["colorBlue"] })
+		hl("colorGreen", { fg = coloscheme["colorGreen"] })
 		hl("colorRed", { fg = coloscheme["colorRed"] })
 		hl("colorYellow", { fg = coloscheme["colorYellow"] })
 		hl("colorPurple", { fg = coloscheme["colorPurple"] })
