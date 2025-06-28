@@ -3,6 +3,8 @@ local formatters = {
 	json = { "jq" },
 	html = { "prettier" },
 	javascritp = { "prettier" },
+	css = { 'prettier' },
+	scss = { 'prettier' },
 	bash = { "beautysh" },
 	python = { "black" },
 }

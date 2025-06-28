@@ -10,6 +10,7 @@ return {
 		ensure_installed = {
 			"bash",
 			"css",
+			"scss",
 			"html",
 			"javascript",
 			"json",
