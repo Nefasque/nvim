@@ -99,22 +99,3 @@ M.fileInfo = function()
 end
 
 return M
-
--- vim.cmd[[
--- 	set statusline+=%#stlhl_mode#
--- 	set statusline+=\
--- 	set statusline+=%{stlfn.mode()}
--- 	set statusline+=\
--- 	set statusline+=%#stlhl_path#
--- 	set statusline+=%{stlfn.ft()}
--- 	set statusline+=%m
--- 	set statusline+=%=
--- 	set statusline+=%#green#
--- 	set statusline+=\
--- 	set statusline+=%#blue#
--- 	set statusline+=%{stlfn.cp()}
--- 	set statusline+=%{stlfn.si()}
--- ]]
-
--- vim.go.statusline =
--- "%{%(nvim_get_current_win()==#g:actual_curwin || &laststatus==3) ? 'nahhola' : 'work' %}"

@@ -121,9 +121,10 @@ return {
 			local summary = vim.b[data.buf].minidiff_summary
 			local t = {}
 
-			if summary == nil then
-				 summary = { add = 0, change = 0, delete = 0 }
-			end
+			if summary == nil then return end
+			if summary.add == nil then summary.add = 0 end
+			if summary.change == nil then summary.change = 0 end
+      if summary.delete == nil then summary.delete = 0 end
 
 			if summary.add > 0 then
 				table.insert(t, "%#MiniDiffSignAdd# " .. summary.add)
@@ -168,12 +169,12 @@ return {
 						{ hl = "stlhl_pos", strings = { stl.cursorPos() } },
 					})
 				end,
-				inactive = function ()
+				inactive = function()
 					local stl = require("statusline")
 					return MiniStatusline.combine_groups({
 						{ hl = "MiniStatuslineInactive", strings = { stl.fileInfo() } },
 					})
-				end
+				end,
 			},
 		})
 

@@ -33,3 +33,4 @@ require("lazy").setup({
 
 --- scritp
 require("runner")
+require("new-terminal")
