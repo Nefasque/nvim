@@ -5,7 +5,7 @@ return {
 	},
 	build = ":TSUpdate",
 	event = "VeryLazy",
-	main = "nvim-treesitter.configs",
+	-- main = "nvim-treesitter.configs",
 	opts = {
 		ensure_installed = {
 			"bash",
