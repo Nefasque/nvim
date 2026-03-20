@@ -19,8 +19,8 @@ return {
 			bg0 = { coloscheme["color0"], "235" },
 			bg1 = { coloscheme["gray1"], "236" },
 			bg2 = { coloscheme["gray2"], "236" },
-			bg3 = { coloscheme["gray2"], "237" },
-			bg4 = { coloscheme["gray2"], "237" },
+			bg3 = { coloscheme["gray3"], "237" },
+			bg4 = { coloscheme["gray4"], "237" },
 			bg_red = { coloscheme["color1"], "203" },
 			diff_red = { coloscheme["color8"], "52" },
 			bg_green = { coloscheme["color2"], "107" },
@@ -54,9 +54,9 @@ return {
 		hl("CursorLine", { bg = coloscheme["gray1"] })
 		hl("ColorColumn", { bg = coloscheme["gray1"] })
 		hl("VirtualTextError", { fg = coloscheme["gray3"] })
-
 		hl("Cursor", { fg = "NONE", bg = coloscheme["color7"] })
-		-- hl("CursorIM", { fg = coloscheme["color7"], bg = coloscheme["color0"] })
+		hl("Comment", { fg = coloscheme["gray4"]})
+		hl("LineNr", { fg = coloscheme["gray4"] })
 
 		-- color main
 		hl("colorBlue", { fg = coloscheme["colorBlue"] })
